@@ -2,7 +2,7 @@ console.log("yo");
 
 let input = document.getElementById("input");
 let form = document.querySelector("form");
-let p = document.querySelector("p")
+let p = document.querySelector("#display")
 
 form.addEventListener("submit", e => {
   e.preventDefault();
