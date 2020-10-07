@@ -7,7 +7,7 @@ let p = document.querySelector("p")
 form.addEventListener("submit", e => {
   e.preventDefault();
 
-  fetch(`http://localhost:3000/weather?address=${input.value}`)
+  fetch(`/weather?address=${input.value}`)
     .then(response => {
       response.json().then(data => {
         if (data.error) {
@@ -15,7 +15,7 @@ form.addEventListener("submit", e => {
         } else {
           console.log("data", data);
           const {temperature, location, feelslike} = data
-          p.textContent = `in ${location} it feels like ${feelslike} but it is ${temperature}`
+          p.textContent = `in ${location} it feels like ${feelslike} but it is actually ${temperature}`
         }
       });
     })

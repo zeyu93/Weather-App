@@ -5,6 +5,8 @@ const getWeatherWithCoords = require("./utils/weather");
 
 const app = express();
 
+const PORT = process.env.PORT || 3000
+
 const public = path.join(__dirname, "../public");
 app.set("view engine", "hbs");
 app.use(express.static(public));
@@ -35,6 +37,6 @@ app.get("/about", (req, res) => {
   res.send("about.html");
 });
 
-app.listen(3000, () => {
-  console.log("server is running on 3000");
+app.listen(PORT, () => {
+  console.log("server is running on " + PORT);
 });
