@@ -22,6 +22,7 @@ const getCoordsForCity = city => {
           reject("bad request, no location found");
         } else {
           let city = res.body.features[0];
+          console.log(city)
           const [long, lat] = city.center;
           let data = {
             long,
